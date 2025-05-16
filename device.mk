@@ -6,27 +6,24 @@
 #
 
 LOCAL_PATH := device/xiaomi/gold
-# A/B
+
+# A/B OTA post-install configuration
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+# Boot control HAL packages
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-PRODUCT_PACKAGES += \
-    bootctrl.mt6833
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-service \
     bootctrl.mt6833 \
     libgptutils \
     libz \
     libcutils
 
+# Other product packages
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
