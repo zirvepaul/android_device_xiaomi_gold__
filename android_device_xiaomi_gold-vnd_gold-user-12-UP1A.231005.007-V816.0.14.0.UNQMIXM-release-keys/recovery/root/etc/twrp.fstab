@@ -1,0 +1,22 @@
+# Dynamic partitions
+/dev/block/mapper/system       /system        ext4    ro      wait
+/dev/block/mapper/product      /product       ext4    ro      wait
+/dev/block/mapper/vendor       /vendor        ext4    ro      wait
+/dev/block/mapper/system_ext   /system_ext    ext4    ro      wait
+/dev/block/mapper/odm          /odm           ext4    ro      wait
+
+# Boot and recovery
+/dev/block/bootdevice/by-name/boot           /boot           emmc    defaults
+/dev/block/bootdevice/by-name/recovery       /recovery       emmc    defaults
+/dev/block/bootdevice/by-name/vendor_boot    /vendor_boot    emmc    defaults
+
+# VBMeta
+/dev/block/bootdevice/by-name/vbmeta         /vbmeta         emmc    defaults
+/dev/block/bootdevice/by-name/vbmeta_system  /vbmeta_system  emmc    defaults
+/dev/block/bootdevice/by-name/vbmeta_vendor  /vbmeta_vendor  emmc    defaults
+
+# Super partition (for dynamic partitioning)
+/dev/block/bootdevice/by-name/super          /super          emmc    defaults
+
+# Optional debug boot
+/dev/block/bootdevice/by-name/vendor_boot_debug /vendor_boot_debug emmc defaults
